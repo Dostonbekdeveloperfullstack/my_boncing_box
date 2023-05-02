@@ -1,0 +1,44 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" > rahmonjo_d</div>
+  <script type="text/javascript">
+    // YOUR CODE
+    var ekranKengligi = window.innerWidth;
+    var ekranBalanligi = window.innerHeight;
+
+    var qutiKengligi = document.getElementById("my_bouncing_box").clientWidth;
+    var qutiBalantligi = document.getElementById("my_bouncing_box").clientHeight;
+
+   var tepaga = 0;
+   var chapga = 0;
+
+    var x = setInterval(function(){
+
+         quti =  document.getElementById("my_bouncing_box");
+        if(tepaga){
+            quti.style.top =  (parseInt (quti.style.top) - 1)+ "px";
+        }else{quti.style.top =  (parseInt (quti.style.top) + 1)+ "px";}
+
+        if(chapga){
+            quti.style.left =  (parseInt (quti.style.left) - 1)+ "px";
+        }else{
+            quti.style.left =  (parseInt (quti.style.left) + 1)+ "px";
+        }
+
+        if(parseInt(quti.style.top) == 0){
+            tepaga = 0;
+        }
+        if(parseInt(quti.style.left) == 0){
+            chapga = 0;
+        }
+        if(parseInt(quti.style.top)==(ekranBalanligi - qutiBalantligi)){
+            tepaga = 1;
+        }
+        if(parseInt(quti.style.left)==(ekranKengligi - qutiKengligi)){
+           chapga = 1;
+        }
+
+
+
+    }, 100/40)
+  </script>
+</html>
